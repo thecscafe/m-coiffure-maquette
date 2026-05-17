@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M Coiffure — Salon de coiffure à Villiers-sur-Marne</title>
+<meta name="description" content="M Coiffure, salon de coiffure à Villiers-sur-Marne. Coupe homme, femme, enfant et taille de barbe. Sans rendez-vous. 5/5 sur Google avec 42 avis.">
+<meta name="theme-color" content="#0E1612">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "M Coiffure",
+  "address": {"@type":"PostalAddress","streetAddress":"2 Rue Gaston Beraut","addressLocality":"Villiers-sur-Marne","postalCode":"94350","addressCountry":"FR"},
+  "telephone": "+33663726715",
+  "priceRange": "€",
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"42"},
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:30","closes":"12:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"14:30","closes":"19:30"}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0E1612;
+    --bg-2:#141D18;
+    --bg-3:#1A241F;
+    --ink:#F1EAD5;
+    --ink-soft:#D8CEB6;
+    --ink-dim:#9A8E72;
+    --ink-mute:#5E5443;
+    --brass:#C9A961;
+    --brass-deep:#A8862E;
+    --brass-soft:#3D3322;
+    --line:#2A2F25;
+    --line-bright:#3F4639;
+    --display:'Playfair Display', Georgia, serif;
+    --body:'DM Sans', system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--body);font-size:16px;line-height:1.65;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+    background-image:radial-gradient(circle at 20% 20%, rgba(201,169,97,.04), transparent 50%),
+                     radial-gradient(circle at 80% 80%, rgba(201,169,97,.03), transparent 60%);
+  }
+  ::selection{background:var(--brass);color:var(--bg)}
+  a{color:inherit;text-decoration:none}
+
+  .container{max-width:1280px;margin:0 auto;padding:0 48px;position:relative;z-index:2}
+
+  /* Decorative vertical stripes (barber pole reference, very subtle) */
+  .stripes{
+    position:absolute;left:0;right:0;height:2px;
+    background:repeating-linear-gradient(90deg,
+      var(--brass) 0, var(--brass) 24px,
+      transparent 24px, transparent 48px);
+    opacity:.35;
+  }
+
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(14,22,18,.9);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line);
+    transition:transform .35s ease;
+  }
+  .nav-inner{
+    max-width:1280px;margin:0 auto;padding:20px 48px;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;
+  }
+  .logo{display:flex;align-items:center;gap:16px}
+  .logo-mark{
+    width:44px;height:44px;
+    border:1px solid var(--brass);
+    color:var(--brass);
+    display:grid;place-items:center;
+    font-family:var(--display);font-style:italic;
+    font-size:24px;font-weight:500;
+    background:transparent;
+    position:relative;
+  }
+  .logo-mark::before,.logo-mark::after{
+    content:"";position:absolute;
+    width:6px;height:6px;
+    border:1px solid var(--brass);
+  }
+  .logo-mark::before{top:-3px;left:-3px;border-right:0;border-bottom:0}
+  .logo-mark::after{bottom:-3px;right:-3px;border-left:0;border-top:0}
+  .logo-text{
+    font-family:var(--display);
+    font-size:22px;font-weight:500;
+    letter-spacing:.04em;color:var(--ink);
+  }
+  .logo-text em{font-style:italic;color:var(--brass)}
+  .nav-links{display:flex;gap:42px;list-style:none;align-items:center}
+  .nav-links a{
+    font-family:var(--body);font-size:12px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.18em;
+    color:var(--ink-soft);transition:color .2s;position:relative;
+    padding:6px 0;
+  }
+  .nav-links a:hover{color:var(--brass)}
+  .nav-links a.active{color:var(--brass)}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;
+    height:1px;width:0;background:var(--brass);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-cta{
+    font-family:var(--body);font-size:13px;font-weight:500;
+    color:var(--bg);background:var(--brass);
+    padding:11px 22px;
+    display:flex;align-items:center;gap:8px;
+    transition:all .25s ease;
+    border:1px solid var(--brass);
+    text-transform:uppercase;letter-spacing:.08em;
+  }
+  .nav-cta:hover{background:var(--ink);border-color:var(--ink)}
+  .menu-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:8px}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    padding:170px 48px 100px;
+    position:relative;
+    display:flex;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .stripes.top{top:80px}
+  .hero .stripes.bottom{bottom:0}
+  .hero-inner{
+    max-width:1280px;margin:0 auto;width:100%;
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.3fr 1fr;
+    gap:80px;align-items:center;
+  }
+  .hero-kicker{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:36px;
+    font-family:var(--body);font-size:11px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.24em;
+    color:var(--brass);
+  }
+  .hero-kicker::before{content:"";width:36px;height:1px;background:var(--brass)}
+  .hero h1{
+    font-family:var(--display);
+    font-size:clamp(56px, 9vw, 132px);
+    line-height:1;font-weight:400;
+    letter-spacing:-.015em;
+    margin-bottom:32px;
+    color:var(--ink);
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--brass);
+    font-weight:500;
+  }
+  .ornament{
+    display:flex;align-items:center;gap:14px;
+    margin:32px 0;font-size:18px;color:var(--brass);
+  }
+  .ornament .line{flex:1;max-width:80px;height:1px;background:var(--brass);opacity:.5}
+  .hero-sub{
+    font-size:18px;color:var(--ink-soft);
+    max-width:480px;margin-bottom:48px;
+    line-height:1.7;
+  }
+  .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px}
+  .btn-primary{
+    background:var(--brass);color:var(--bg);
+    padding:18px 32px;font-weight:600;font-size:13px;
+    text-transform:uppercase;letter-spacing:.1em;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:all .25s ease;
+    border:1px solid var(--brass);
+  }
+  .btn-primary:hover{
+    background:var(--ink);border-color:var(--ink);
+    transform:translateY(-2px);
+    box-shadow:0 16px 40px -16px rgba(201,169,97,.3);
+  }
+  .btn-ghost{
+    background:transparent;color:var(--ink);
+    padding:18px 32px;font-weight:500;font-size:13px;
+    text-transform:uppercase;letter-spacing:.1em;
+    border:1px solid var(--line-bright);
+    display:inline-flex;align-items:center;gap:10px;
+    transition:all .25s ease;
+  }
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass)}
+
+  .hero-stats{
+    display:flex;gap:48px;flex-wrap:wrap;
+    padding-top:40px;border-top:1px solid var(--line);
+  }
+  .stat{display:flex;flex-direction:column;gap:6px}
+  .stat-label{
+    font-size:11px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.18em;
+    color:var(--ink-mute);
+  }
+  .stat-value{
+    font-family:var(--display);
+    font-size:38px;line-height:1;color:var(--ink);font-weight:500;
+  }
+  .stat-value em{font-style:italic;color:var(--brass)}
+
+  /* Hero plaque */
+  .plaque{
+    position:relative;
+    aspect-ratio:3/4;max-width:420px;margin-left:auto;
+    background:var(--bg-2);
+    border:1px solid var(--brass-soft);
+    padding:48px 36px;
+    display:flex;flex-direction:column;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,.6);
+  }
+  .plaque::before,.plaque::after{
+    content:"";position:absolute;
+    width:18px;height:18px;
+    border:1px solid var(--brass);
+  }
+  .plaque::before{top:12px;left:12px;border-right:0;border-bottom:0}
+  .plaque::after{bottom:12px;right:12px;border-left:0;border-top:0}
+  .plaque-corner-tr,.plaque-corner-bl{
+    position:absolute;width:18px;height:18px;
+    border:1px solid var(--brass);
+  }
+  .plaque-corner-tr{top:12px;right:12px;border-left:0;border-bottom:0}
+  .plaque-corner-bl{bottom:12px;left:12px;border-right:0;border-top:0}
+
+  .plaque-est{
+    font-family:var(--body);font-size:10px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.32em;
+    color:var(--brass);text-align:center;
+    margin-bottom:32px;
+  }
+  .plaque-name{
+    font-family:var(--display);
+    font-size:64px;line-height:.95;font-weight:500;
+    color:var(--ink);text-align:center;
+    font-style:italic;
+    margin-bottom:8px;
+  }
+  .plaque-sub{
+    text-align:center;
+    font-family:var(--display);font-size:18px;
+    color:var(--brass);font-style:italic;
+    margin-bottom:36px;
+  }
+  .plaque-ornament{
+    text-align:center;font-size:24px;color:var(--brass);
+    margin-bottom:36px;letter-spacing:.5em;
+    padding-left:.5em;
+  }
+  .plaque-rating{
+    text-align:center;
+    padding:24px 0;
+    border-top:1px solid var(--brass-soft);
+    border-bottom:1px solid var(--brass-soft);
+    margin-bottom:24px;
+  }
+  .plaque-rating .num{
+    font-family:var(--display);
+    font-size:56px;line-height:1;
+    color:var(--brass);font-style:italic;font-weight:500;
+  }
+  .plaque-rating .stars{
+    color:var(--brass);letter-spacing:6px;font-size:14px;
+    margin-top:6px;
+  }
+  .plaque-meta{
+    text-align:center;
+    font-size:11px;
+    text-transform:uppercase;letter-spacing:.2em;
+    color:var(--ink-mute);
+    margin-top:auto;
+  }
+
+  /* SECTIONS */
+  section{padding:140px 48px;position:relative}
+  .section-eyebrow{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:32px;
+    font-family:var(--body);font-size:11px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.24em;
+    color:var(--brass);
+  }
+  .section-eyebrow::before{content:"";width:36px;height:1px;background:var(--brass)}
+  .section-title{
+    font-family:var(--display);
+    font-size:clamp(44px, 6.5vw, 88px);
+    line-height:1;font-weight:400;
+    letter-spacing:-.015em;
+    margin-bottom:28px;color:var(--ink);
+    max-width:12ch;
+  }
+  .section-title em{font-style:italic;color:var(--brass);font-weight:500}
+  .section-intro{
+    font-size:18px;color:var(--ink-soft);
+    max-width:560px;line-height:1.7;
+  }
+
+  /* ABOUT */
+  .about{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:100px;align-items:start;margin-top:80px;
+  }
+  .about-text p{font-size:17px;line-height:1.85;color:var(--ink-soft);margin-bottom:24px}
+  .about-text p strong{color:var(--ink);font-weight:500}
+  .about-text p:first-of-type{
+    font-family:var(--display);
+    font-size:24px;font-weight:400;line-height:1.5;
+    color:var(--ink);font-style:italic;
+  }
+  .about-text p:first-of-type em{color:var(--brass);font-style:normal;font-weight:500}
+
+  .signature{
+    margin-top:48px;padding-top:32px;
+    border-top:1px solid var(--line-bright);
+    display:flex;align-items:center;gap:18px;
+  }
+  .sig-mark{
+    width:56px;height:56px;
+    border:1px solid var(--brass);color:var(--brass);
+    display:grid;place-items:center;
+    font-family:var(--display);font-style:italic;
+    font-size:28px;font-weight:500;
+  }
+  .sig-name{
+    font-family:var(--display);
+    font-size:22px;font-weight:500;color:var(--ink);font-style:italic;
+  }
+  .sig-role{
+    font-family:var(--body);font-size:11px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.2em;
+    color:var(--ink-mute);margin-top:6px;
+  }
+
+  .principles{display:flex;flex-direction:column}
+  .principle{
+    padding:36px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:80px 1fr;
+    gap:32px;align-items:baseline;
+  }
+  .principle:first-child{padding-top:0}
+  .principle:last-child{border-bottom:0}
+  .principle-num{
+    font-family:var(--display);font-size:18px;
+    color:var(--brass);font-style:italic;font-weight:500;
+  }
+  .principle h3{
+    font-family:var(--display);
+    font-size:28px;font-weight:400;line-height:1.2;
+    color:var(--ink);margin-bottom:12px;
+  }
+  .principle h3 em{font-style:italic;color:var(--brass);font-weight:500}
+  .principle p{font-size:15px;color:var(--ink-soft);line-height:1.7}
+
+  /* REVIEWS */
+  .reviews-head{
+    display:grid;grid-template-columns:1.4fr 1fr;
+    gap:80px;align-items:end;margin-bottom:80px;
+  }
+  .rating-block{text-align:right}
+  .rating-big{
+    font-family:var(--display);
+    font-size:140px;line-height:.85;font-weight:500;
+    color:var(--ink);font-style:italic;
+  }
+  .rating-big em{color:var(--brass)}
+  .rating-stars{color:var(--brass);font-size:18px;letter-spacing:5px;margin-top:10px}
+  .rating-meta{
+    font-family:var(--body);font-size:11px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.2em;
+    color:var(--ink-mute);margin-top:8px;
+  }
+
+  .reviews-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .review{
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    padding:36px 32px;
+    display:flex;flex-direction:column;
+    transition:all .3s ease;
+    position:relative;
+  }
+  .review::before{
+    content:"";position:absolute;
+    top:0;left:0;width:100%;height:1px;
+    background:var(--brass);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .3s ease;
+  }
+  .review:hover{border-color:var(--brass-deep)}
+  .review:hover::before{transform:scaleX(1)}
+  .review-mark{
+    font-family:var(--display);
+    font-size:60px;line-height:.5;
+    color:var(--brass);
+    font-style:italic;font-weight:500;
+    margin-bottom:12px;
+    opacity:.6;
+  }
+  .review-stars{color:var(--brass);font-size:13px;letter-spacing:2px;margin-bottom:18px}
+  .review-text{
+    font-family:var(--display);
+    font-size:17px;line-height:1.55;color:var(--ink);
+    font-style:italic;font-weight:400;
+    margin-bottom:24px;
+  }
+  .review-text.short{font-size:20px}
+  .review-author{
+    display:flex;align-items:center;gap:12px;
+    padding-top:18px;border-top:1px solid var(--line);
+    margin-top:auto;
+  }
+  .author-avatar{
+    width:36px;height:36px;
+    border:1px solid var(--brass-deep);color:var(--brass);
+    display:grid;place-items:center;
+    font-family:var(--display);font-size:16px;font-style:italic;font-weight:500;
+  }
+  .author-info{display:flex;flex-direction:column;gap:2px}
+  .author-name{font-size:14px;color:var(--ink);font-weight:500}
+  .author-date{
+    font-family:var(--body);font-size:10px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.15em;
+    color:var(--ink-mute);
+  }
+
+  .reviews-foot{
+    text-align:center;margin-top:64px;padding-top:48px;
+    border-top:1px solid var(--line);
+  }
+  .reviews-foot p{
+    font-family:var(--display);font-size:24px;
+    color:var(--ink);font-style:italic;margin-bottom:24px;
+  }
+  .reviews-foot em{color:var(--brass);font-weight:500}
+
+  /* SERVICES */
+  .services{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .services-list{
+    margin-top:80px;
+    border-top:1px solid var(--brass-soft);
+  }
+  .service-row{
+    padding:48px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:80px 1fr 2fr 140px;
+    gap:40px;align-items:baseline;
+    transition:all .3s ease;cursor:default;
+  }
+  .service-row:hover{background:rgba(201,169,97,.04)}
+  .service-num{
+    font-family:var(--display);font-size:18px;
+    color:var(--brass);font-style:italic;font-weight:500;
+  }
+  .service-name{
+    font-family:var(--display);
+    font-size:38px;font-weight:400;line-height:1;color:var(--ink);
+  }
+  .service-name em{font-style:italic;color:var(--brass);font-weight:500}
+  .service-desc{font-size:15px;color:var(--ink-soft);line-height:1.7}
+  .service-meta{
+    font-family:var(--body);font-size:11px;font-weight:600;
+    color:var(--brass);
+    text-transform:uppercase;letter-spacing:.2em;
+    text-align:right;
+  }
+
+  .services-note{
+    margin-top:56px;
+    padding:36px 40px;
+    border:1px solid var(--brass-soft);
+    background:var(--bg);
+    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  }
+  .note-mark{
+    font-family:var(--display);font-style:italic;
+    color:var(--brass);font-size:42px;line-height:1;
+    flex-shrink:0;font-weight:500;
+  }
+  .services-note p{font-size:16px;color:var(--ink-soft);line-height:1.6;flex:1;min-width:280px}
+  .services-note strong{color:var(--ink);font-weight:500}
+
+  /* CONTACT */
+  .contact-grid{
+    margin-top:80px;
+    display:grid;grid-template-columns:1fr 1.2fr;gap:0;
+    background:var(--bg-2);
+    border:1px solid var(--line-bright);
+  }
+  .contact-info{
+    padding:56px 48px;
+    display:flex;flex-direction:column;gap:36px;
+    border-right:1px solid var(--line);
+  }
+  .contact-block{display:flex;flex-direction:column;gap:10px}
+  .contact-label{
+    font-family:var(--body);font-size:10px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.24em;
+    color:var(--ink-mute);
+  }
+  .contact-value{
+    font-family:var(--display);
+    font-size:26px;font-weight:400;line-height:1.3;color:var(--ink);
+  }
+  .contact-value.phone{
+    font-size:38px;color:var(--brass);font-style:italic;font-weight:500;
+  }
+  .contact-value a{transition:color .2s}
+  .contact-value a:hover{color:var(--brass)}
+
+  .hours-list{display:flex;flex-direction:column;margin-top:6px}
+  .hours-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;
+  }
+  .hours-row:last-child{border-bottom:0}
+  .hours-day{
+    color:var(--ink-soft);font-weight:500;font-size:12px;
+    text-transform:uppercase;letter-spacing:.12em;
+  }
+  .hours-time{
+    color:var(--ink);font-family:var(--display);font-size:14px;font-style:italic;
+  }
+  .hours-row.closed .hours-time{color:var(--ink-mute)}
+  .hours-row.today{
+    background:rgba(201,169,97,.06);
+    margin:0 -12px;padding:12px;border-bottom:0;
+  }
+  .hours-row.today .hours-day{color:var(--brass)}
+  .hours-row.today .hours-time{color:var(--brass)}
+
+  .contact-map{min-height:600px;background:var(--bg-3)}
+  .contact-map iframe{
+    width:100%;height:100%;border:0;display:block;
+    filter:invert(.92) hue-rotate(180deg) saturate(.6) brightness(.95) contrast(.9);
+  }
+
+  /* FOOTER */
+  .footer{
+    padding:60px 48px 40px;
+    border-top:1px solid var(--line);
+    background:var(--bg);position:relative;z-index:2;
+  }
+  .footer-inner{
+    max-width:1280px;margin:0 auto;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:40px;flex-wrap:wrap;
+  }
+  .footer-brand{display:flex;align-items:center;gap:14px}
+  .footer-info{
+    font-family:var(--body);font-size:11px;
+    color:var(--ink-mute);
+    text-transform:uppercase;letter-spacing:.15em;
+    text-align:right;line-height:1.8;
+  }
+
+  /* MOBILE BAR */
+  .mobile-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;
+    background:var(--brass);color:var(--bg);
+    padding:16px 20px;z-index:49;
+    align-items:center;justify-content:center;gap:12px;
+    font-weight:600;font-size:13px;
+    text-transform:uppercase;letter-spacing:.12em;
+  }
+  .mobile-bar svg{flex-shrink:0}
+
+  /* RESPONSIVE */
+  @media (max-width:1024px){
+    .hero-inner{grid-template-columns:1fr;gap:60px}
+    .plaque{max-width:360px;margin:0 auto}
+    .about-grid{grid-template-columns:1fr;gap:64px}
+    .reviews-head{grid-template-columns:1fr;text-align:left}
+    .rating-block{text-align:left}
+    .reviews-grid{grid-template-columns:repeat(2,1fr)}
+    .service-row{grid-template-columns:60px 1fr;gap:16px 24px}
+    .service-row .service-desc,.service-row .service-meta{grid-column:2;text-align:left}
+    .contact-grid{grid-template-columns:1fr}
+    .contact-info{border-right:0;border-bottom:1px solid var(--line)}
+    .contact-map{min-height:400px}
+  }
+  @media (max-width:768px){
+    section{padding:90px 24px}
+    .container{padding:0 24px}
+    .hero{padding:120px 24px 80px}
+    .nav-inner{padding:16px 24px}
+    .nav-links{
+      position:fixed;top:78px;left:0;right:0;
+      background:var(--bg-2);
+      flex-direction:column;padding:36px 24px;gap:28px;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-150%);
+      transition:transform .35s ease;
+    }
+    .nav-links.open{transform:translateY(0)}
+    .nav-cta{display:none}
+    .menu-toggle{display:block}
+    .hero h1{font-size:60px}
+    .reviews-grid{grid-template-columns:1fr}
+    .rating-big{font-size:96px}
+    .service-name{font-size:30px}
+    .contact-info{padding:40px 28px}
+    .contact-value.phone{font-size:30px}
+    .mobile-bar{display:flex}
+    body{padding-bottom:64px}
+    .footer-inner{flex-direction:column;text-align:center}
+    .footer-info{text-align:center}
+    .plaque-name{font-size:48px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#accueil" class="logo">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">M <em>Coiffure</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+33663726715" class="nav-cta">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+      Appeler
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero" id="accueil">
+  <div class="stripes top"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">Établi en MMXXIII · Villiers-sur-Marne</div>
+      <h1>L'art de la coupe, <em>sans détour.</em></h1>
+      <div class="ornament">
+        <span class="line"></span>
+        <span>✦</span>
+        <span class="line"></span>
+      </div>
+      <p class="hero-sub">Salon de coiffure homme, femme et enfant. Taille de barbe. Travail soigné, accueil chaleureux, hygiène irréprochable. Passez sans rendez-vous.</p>
+      <div class="hero-cta-row">
+        <a href="tel:+33663726715" class="btn-primary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+          06 63 72 67 15
+        </a>
+        <a href="#services" class="btn-ghost">Nos services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-label">Note Google</span>
+          <span class="stat-value"><em>5,0</em></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Avis vérifiés</span>
+          <span class="stat-value">XLII</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Ouvert depuis</span>
+          <span class="stat-value">MMXXIII</span>
+        </div>
+      </div>
+    </div>
+    <div class="plaque">
+      <div class="plaque-corner-tr"></div>
+      <div class="plaque-corner-bl"></div>
+      <div class="plaque-est">— Établi en 2023 —</div>
+      <div class="plaque-name">M</div>
+      <div class="plaque-sub">Coiffure</div>
+      <div class="plaque-ornament">· · ✦ · ·</div>
+      <div class="plaque-rating">
+        <div class="num">5,0</div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="plaque-meta">— 42 avis Google —</div>
+    </div>
+  </div>
+  <div class="stripes bottom"></div>
+</section>
+
+<section class="about" id="apropos">
+  <div class="container">
+    <div class="section-eyebrow">À propos</div>
+    <h2 class="section-title">Un salon, <em>une</em> exigence.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Au cœur de Villiers-sur-Marne, <em>M Coiffure</em> est un salon où l'on prend le temps. Le temps d'écouter, de comprendre, de couper avec précision.</p>
+        <p>Ouvert en <strong>2023 au 2 rue Gaston Beraut</strong>, le salon s'est rapidement imposé comme une adresse de référence dans le quartier. Coupes hommes, coupes femmes, coupes enfants, tailles de barbe: chaque prestation est réalisée avec attention, sans précipitation.</p>
+        <p>Les outils sont systématiquement désinfectés. Le salon est tenu impeccable. L'accueil est chaleureux. Et le résultat parle de lui-même: <strong>5/5 sur Google, 42 avis</strong>, et une clientèle qui revient.</p>
+        <div class="signature">
+          <div class="sig-mark">M</div>
+          <div>
+            <div class="sig-name">Mansour Mansour</div>
+            <div class="sig-role">Fondateur</div>
+          </div>
+        </div>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <div class="principle-num">I.</div>
+          <div>
+            <h3>Sans <em>rendez-vous</em></h3>
+            <p>Passez quand vous voulez, aux horaires d'ouverture. Pas de prise de tête, pas d'appli à installer.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">II.</div>
+          <div>
+            <h3>Hygiène <em>impeccable</em></h3>
+            <p>Tondeuses, ciseaux, peignes: tout est désinfecté avant chaque utilisation. Salon toujours propre.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">III.</div>
+          <div>
+            <h3>Patient avec les <em>enfants</em></h3>
+            <p>Coupes enfants en douceur, dans le calme. Les plus jeunes sont les bienvenus, à tout âge.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">IV.</div>
+          <div>
+            <h3>Coupe <em>&</em> barbe</h3>
+            <p>Tout sous le même toit. Coupe seule, barbe seule, ou les deux selon votre besoin du jour.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="container">
+    <div class="section-eyebrow">Avis clients</div>
+    <div class="reviews-head">
+      <div>
+        <h2 class="section-title">Ils en <em>parlent</em> pour nous.</h2>
+        <p class="section-intro">Une sélection des 42 avis Google laissés par les clients du salon. Note unanime de cinq étoiles sur cinq.</p>
+      </div>
+      <div class="rating-block">
+        <div class="rating-big"><em>5,0</em></div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-meta">42 avis · Google</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="review-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Cela doit faire dorénavant un an que je me rends régulièrement chez ce coiffeur. Très professionnel, il prend le temps pour réaliser un travail soigné.</p>
+        <div class="review-author">
+          <div class="author-avatar">F</div>
+          <div class="author-info">
+            <span class="author-name">François L.</span>
+            <span class="author-date">Juillet 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Excellent coiffeur, coupe et barbe toujours niquel, très patient avec les enfants, les tondeuses toujours désinfectées, salon toujours propre.</p>
+        <div class="review-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <span class="author-name">Miguel D.</span>
+            <span class="author-date">Décembre 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Super expérience chez M Coiffure. Accueil chaleureux, équipe professionnelle et à l'écoute. La coupe est parfaite, exactement ce que je voulais.</p>
+        <div class="review-author">
+          <div class="author-avatar">H</div>
+          <div class="author-info">
+            <span class="author-name">Hakim B.</span>
+            <span class="author-date">Mars 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Cela fait plus d'un an que je viens chez ce coiffeur et je suis toujours très satisfait. Il prend vraiment son temps avec chaque client.</p>
+        <div class="review-author">
+          <div class="author-avatar">K</div>
+          <div class="author-info">
+            <span class="author-name">Khaled B.</span>
+            <span class="author-date">Avril 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text short">Très content, coupe rapide, superbe résultat et pas cher. Sans rdv. Coiffeur très sympa.</p>
+        <div class="review-author">
+          <div class="author-avatar">C</div>
+          <div class="author-info">
+            <span class="author-name">Christophe S.</span>
+            <span class="author-date">Juillet 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Mon fils se fait couper les cheveux tous les 2 mois, il en ressort ravi à chaque passage. Accueil chaleureux et coiffeur pro.</p>
+        <div class="review-author">
+          <div class="author-avatar">H</div>
+          <div class="author-info">
+            <span class="author-name">Hen H.</span>
+            <span class="author-date">Août 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-foot">
+      <p>L'ensemble des avis est <em>visible sur Google</em>.</p>
+      <a href="https://maps.app.goo.gl/H53SxCUd6tf3Yvc66" target="_blank" rel="noopener" class="btn-ghost">Lire les 42 avis</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-eyebrow">Services</div>
+    <h2 class="section-title">Coupes & <em>savoir-faire.</em></h2>
+    <p class="section-intro">Une offre claire, exécutée avec soin. Pour vous, votre famille et vos enfants.</p>
+
+    <div class="services-list">
+      <div class="service-row">
+        <div class="service-num">I.</div>
+        <div class="service-name">Coupe <em>homme</em></div>
+        <div class="service-desc">Coupe classique, dégradé, fade ou coupe ciseaux. Précision, finition soignée, contour propre.</div>
+        <div class="service-meta">Sans RDV</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">II.</div>
+        <div class="service-name">Taille de <em>barbe</em></div>
+        <div class="service-desc">Taille, contour et soin de la barbe. Outils désinfectés, finition à la lame ou à la tondeuse.</div>
+        <div class="service-meta">Coupe + barbe</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">III.</div>
+        <div class="service-name">Coupe <em>enfant</em></div>
+        <div class="service-desc">Coupes enfants réalisées en douceur et dans le calme. Les plus jeunes sont les bienvenus, à tout âge.</div>
+        <div class="service-meta">Patience garantie</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">IV.</div>
+        <div class="service-name">Coupe <em>femme</em></div>
+        <div class="service-desc">Coupes dames, mise en forme et finitions. Service personnalisé selon votre style.</div>
+        <div class="service-meta">Sur passage</div>
+      </div>
+    </div>
+
+    <div class="services-note">
+      <span class="note-mark">§</span>
+      <p><strong>Tarifs communiqués en salon.</strong> Travail à la prestation, sans surprise. Paiement espèces ou carte accepté.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-title">Nous <em>trouver.</em></h2>
+    <p class="section-intro">Le salon est au 2 rue Gaston Beraut à Villiers-sur-Marne. Un appel suffit pour vérifier l'affluence avant de passer.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <span class="contact-label">Téléphone</span>
+          <span class="contact-value phone"><a href="tel:+33663726715">06 63 72 67 15</a></span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Adresse</span>
+          <span class="contact-value">2 rue Gaston Beraut<br>94350 Villiers-sur-Marne</span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Horaires</span>
+          <div class="hours-list" id="hoursList">
+            <div class="hours-row closed" data-day="1"><span class="hours-day">Lundi</span><span class="hours-time">Fermé</span></div>
+            <div class="hours-row" data-day="2"><span class="hours-day">Mardi</span><span class="hours-time">9h30–12h30 · 14h30–19h30</span></div>
+            <div class="hours-row" data-day="3"><span class="hours-day">Mercredi</span><span class="hours-time">9h30–12h30 · 14h30–19h30</span></div>
+            <div class="hours-row" data-day="4"><span class="hours-day">Jeudi</span><span class="hours-time">9h30–12h30 · 14h30–19h30</span></div>
+            <div class="hours-row" data-day="5"><span class="hours-day">Vendredi</span><span class="hours-time">9h30–12h30 · 14h30–19h30</span></div>
+            <div class="hours-row" data-day="6"><span class="hours-day">Samedi</span><span class="hours-time">9h30–12h30 · 14h30–19h30</span></div>
+            <div class="hours-row closed" data-day="0"><span class="hours-day">Dimanche</span><span class="hours-time">Fermé</span></div>
+          </div>
+        </div>
+        <a href="https://maps.app.goo.gl/H53SxCUd6tf3Yvc66" target="_blank" rel="noopener" class="btn-ghost" style="align-self:flex-start">Itinéraire</a>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=2+Rue+Gaston+Beraut,+94350+Villiers-sur-Marne&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Localisation M Coiffure"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">M <em>Coiffure</em></span>
+    </div>
+    <div class="footer-info">
+      <p>2 Rue Gaston Beraut · 94350 Villiers-sur-Marne</p>
+      <p>SAS · SIREN 977 473 537</p>
+      <p>© MMXXVI M Coiffure · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+33663726715" class="mobile-bar">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+  Appeler 06 63 72 67 15
+</a>
+
+<script>
+  const toggle=document.getElementById('menuToggle'),links=document.getElementById('navLinks');
+  toggle.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  const sections=document.querySelectorAll('section[id]'),navAnchors=document.querySelectorAll('.nav-links a');
+  function setActive(){
+    const y=window.scrollY+130;let current='';
+    sections.forEach(s=>{if(s.offsetTop<=y)current=s.id});
+    navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
+  }
+  window.addEventListener('scroll',setActive,{passive:true});setActive();
+
+  const today=new Date().getDay();
+  const todayRow=document.querySelector(`.hours-row[data-day="${today}"]`);
+  if(todayRow)todayRow.classList.add('today');
+
+  let lastY=0;const nav=document.querySelector('.nav');
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    nav.style.transform=(y>200&&y>lastY)?'translateY(-100%)':'translateY(0)';
+    lastY=y;
+  },{passive:true});
+</script>
+
+</body>
+</html>
